@@ -31,7 +31,7 @@
             this.lbl_Country = new System.Windows.Forms.Label();
             this.cBox_CountryNames = new System.Windows.Forms.ComboBox();
             this.cBox_TacticsFormats = new System.Windows.Forms.ComboBox();
-            this.panel_Titles = new System.Windows.Forms.Panel();
+            this.panel_Header = new System.Windows.Forms.Panel();
             this.lbl_Position = new System.Windows.Forms.Label();
             this.lbl_Number = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
@@ -47,11 +47,11 @@
             this.uC_Player3 = new FootballApp.UserControls.UC_Player();
             this.uC_Player4 = new FootballApp.UserControls.UC_Player();
             this.uC_Player2 = new FootballApp.UserControls.UC_Player();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_Footer = new System.Windows.Forms.Panel();
             this.btn_Generate = new System.Windows.Forms.Button();
-            this.panel_Titles.SuspendLayout();
+            this.panel_Header.SuspendLayout();
             this.panel_Players.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel_Footer.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_Country
@@ -66,8 +66,12 @@
             // 
             // cBox_CountryNames
             // 
+            this.cBox_CountryNames.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cBox_CountryNames.DropDownHeight = 395;
+            this.cBox_CountryNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_CountryNames.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cBox_CountryNames.FormattingEnabled = true;
+            this.cBox_CountryNames.IntegralHeight = false;
             this.cBox_CountryNames.Location = new System.Drawing.Point(142, 11);
             this.cBox_CountryNames.Name = "cBox_CountryNames";
             this.cBox_CountryNames.Size = new System.Drawing.Size(184, 31);
@@ -75,27 +79,30 @@
             // 
             // cBox_TacticsFormats
             // 
+            this.cBox_TacticsFormats.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cBox_TacticsFormats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_TacticsFormats.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cBox_TacticsFormats.FormattingEnabled = true;
             this.cBox_TacticsFormats.Location = new System.Drawing.Point(352, 11);
             this.cBox_TacticsFormats.Name = "cBox_TacticsFormats";
             this.cBox_TacticsFormats.Size = new System.Drawing.Size(111, 31);
             this.cBox_TacticsFormats.TabIndex = 2;
+            this.cBox_TacticsFormats.SelectedIndexChanged += new System.EventHandler(this.cBox_TacticsFormats_SelectedIndexChanged);
             // 
-            // panel_Titles
+            // panel_Header
             // 
-            this.panel_Titles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_Titles.Controls.Add(this.lbl_Position);
-            this.panel_Titles.Controls.Add(this.lbl_Number);
-            this.panel_Titles.Controls.Add(this.lbl_Name);
-            this.panel_Titles.Controls.Add(this.cBox_TacticsFormats);
-            this.panel_Titles.Controls.Add(this.cBox_CountryNames);
-            this.panel_Titles.Controls.Add(this.lbl_Country);
-            this.panel_Titles.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Titles.Location = new System.Drawing.Point(0, 0);
-            this.panel_Titles.Name = "panel_Titles";
-            this.panel_Titles.Size = new System.Drawing.Size(494, 111);
-            this.panel_Titles.TabIndex = 3;
+            this.panel_Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Header.Controls.Add(this.lbl_Position);
+            this.panel_Header.Controls.Add(this.lbl_Number);
+            this.panel_Header.Controls.Add(this.lbl_Name);
+            this.panel_Header.Controls.Add(this.cBox_TacticsFormats);
+            this.panel_Header.Controls.Add(this.cBox_CountryNames);
+            this.panel_Header.Controls.Add(this.lbl_Country);
+            this.panel_Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Header.Location = new System.Drawing.Point(0, 0);
+            this.panel_Header.Name = "panel_Header";
+            this.panel_Header.Size = new System.Drawing.Size(494, 111);
+            this.panel_Header.TabIndex = 3;
             // 
             // lbl_Position
             // 
@@ -234,19 +241,20 @@
             this.uC_Player2.Size = new System.Drawing.Size(464, 40);
             this.uC_Player2.TabIndex = 5;
             // 
-            // panel1
+            // panel_Footer
             // 
-            this.panel1.Controls.Add(this.btn_Generate);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 661);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(494, 91);
-            this.panel1.TabIndex = 6;
+            this.panel_Footer.Controls.Add(this.btn_Generate);
+            this.panel_Footer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_Footer.Location = new System.Drawing.Point(0, 661);
+            this.panel_Footer.Name = "panel_Footer";
+            this.panel_Footer.Size = new System.Drawing.Size(494, 91);
+            this.panel_Footer.TabIndex = 6;
             // 
             // btn_Generate
             // 
             this.btn_Generate.AutoSize = true;
             this.btn_Generate.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_Generate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Generate.Font = new System.Drawing.Font("Tahoma", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_Generate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Generate.Location = new System.Drawing.Point(321, 22);
@@ -255,6 +263,7 @@
             this.btn_Generate.TabIndex = 0;
             this.btn_Generate.Text = "Generate";
             this.btn_Generate.UseVisualStyleBackColor = false;
+            this.btn_Generate.Click += new System.EventHandler(this.btn_Generate_Click);
             // 
             // MainForm
             // 
@@ -262,19 +271,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(494, 752);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_Footer);
             this.Controls.Add(this.panel_Players);
-            this.Controls.Add(this.panel_Titles);
+            this.Controls.Add(this.panel_Header);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
-            this.panel_Titles.ResumeLayout(false);
-            this.panel_Titles.PerformLayout();
+            this.panel_Header.ResumeLayout(false);
+            this.panel_Header.PerformLayout();
             this.panel_Players.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel_Footer.ResumeLayout(false);
+            this.panel_Footer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -283,7 +292,7 @@
         private Label lbl_Country;
         private ComboBox cBox_CountryNames;
         private ComboBox cBox_TacticsFormats;
-        private Panel panel_Titles;
+        private Panel panel_Header;
         private Label lbl_Position;
         private Label lbl_Number;
         private Label lbl_Name;
@@ -299,7 +308,7 @@
         private UserControls.UC_Player uC_Player3;
         private UserControls.UC_Player uC_Player4;
         private UserControls.UC_Player uC_Player2;
-        private Panel panel1;
+        private Panel panel_Footer;
         private Button btn_Generate;
     }
 }
